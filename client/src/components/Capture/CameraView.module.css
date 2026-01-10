@@ -1,0 +1,231 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.closeButton {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background-color 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.closeButton:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.closeButton:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.switchButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background-color 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.switchButton:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.switchButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.switchButton:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.controls {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  padding: 0 1rem;
+  padding-bottom: 6rem;
+}
+
+.captureButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.captureButton {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 4px solid white;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+  position: relative;
+}
+
+.captureButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.captureButton:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 4px;
+}
+
+.captureButtonInner {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.1s ease;
+}
+
+.captureButton:active:not(:disabled) .captureButtonInner {
+  transform: scale(0.9);
+}
+
+.capturing .captureButtonInner {
+  background-color: #ef4444;
+  animation: pulse 0.5s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+}
+
+.errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: var(--background);
+}
+
+.errorContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 24rem;
+  text-align: center;
+}
+
+.errorIcon {
+  font-size: 4rem;
+}
+
+.errorTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.errorMessage {
+  color: var(--foreground);
+  opacity: 0.7;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cancelButton {
+  margin-top: 0.5rem;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 2rem;
+  background-color: var(--background);
+}
+
+@media (max-width: 640px) {
+  .closeButton,
+  .switchButton {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    top: 1rem;
+  }
+
+  .closeButton {
+    left: 1rem;
+  }
+
+  .switchButton {
+    right: 1rem;
+  }
+
+  .controls {
+    bottom: 1rem;
+    padding-bottom: 5rem;
+  }
+
+  .captureButton {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-width: 3px;
+  }
+}
+

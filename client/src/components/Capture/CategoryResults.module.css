@@ -1,0 +1,158 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--background);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--foreground);
+  opacity: 0.7;
+  margin: 0;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.categoryCard {
+  position: relative;
+  padding: 1rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background-color: var(--background);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  outline: none;
+}
+
+.categoryCard:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.categoryCard:focus {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
+
+.categoryCard.selected {
+  border-color: var(--foreground);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.categoryName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.confidence {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+  opacity: 0.6;
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0.25rem;
+}
+
+.categoryType {
+  font-size: 0.875rem;
+  color: var(--foreground);
+  opacity: 0.7;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--foreground);
+  color: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.suggestion {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--foreground);
+}
+
+.suggestionText {
+  font-size: 0.875rem;
+  color: var(--foreground);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.suggestionText strong {
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .categoryCard {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .categoryCard:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .categoryCard.selected {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .confidence {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .suggestion {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+}
+
