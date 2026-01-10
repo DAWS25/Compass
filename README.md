@@ -28,9 +28,6 @@
 | `/capture` | Camera interface for adding places |
 | `/place/[id]` | Detailed view for a specific location |
 | `/event/create` | Form to host a temporary event |
-| `/profile` | User presence and activity stats |
-| `/marketplace` | Local services and used goods |
-| `/assistant` | AI-driven discovery chat |
 
 **Done when:** All routes load with a placeholder UI.
 
@@ -88,17 +85,6 @@
 * **Tasks:** Build form for Event Type, Time, and Location.
 * **Rule:** Events are "Temporary" by default.
 * **Done when:** Form works visually and submits mocked data.
-
-### Phase 8: Profile & Marketplace
-* **Profile (`/profile`):** Display "Presence Score" and "Places Visited" count.
-* **Marketplace (`/marketplace`):** Implement tabbed navigation (Services vs. Used Goods) with item cards.
-* **Done when:** Both screens display structured mock data accurately.
-
-### Phase 9: Assistant (Optional)
-* **Route:** `/assistant`
-* **Tasks:** Chat input UI, suggested questions, recommendation cards.
-* **Done when:** Assistant UI works without backend logic.
-
 ---
 
 ## 5. Integration Phase (Later)
