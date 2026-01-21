@@ -26,6 +26,11 @@
       "version": "lts"
     },
 
+    "ghcr.io/techiro/devcontainer-template/flutter:1.0.0": {
+      "installAndroid": "true",
+      "flutterChannel": "stable"
+    },
+
     "ghcr.io/dlouwers/devcontainer-features/devbox:1": {}
   },
 
@@ -41,14 +46,6 @@
 
   "customizations": {
     "codespaces": {
-
-      "repositories": {
-        "DAWS25/GitOps-Secrets": {
-          "permissions": {
-            "contents": "read"
-          }
-        }
-      },
 
       "vscode": {
         "settings": {},
