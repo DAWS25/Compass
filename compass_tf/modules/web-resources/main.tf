@@ -1,2 +1,2 @@
-resource "aws_s3_bucket" "my_bucket" {
+resource "aws_s3_bucket" "web_resources_bucket" {
 }
