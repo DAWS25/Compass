@@ -12,8 +12,6 @@
 
     "ghcr.io/devcontainers/features/github-cli:1": {},
 
-    "ghcr.io/devcontainers-extra/features/direnv:1": {},
-
     "ghcr.io/devcontainers/features/aws-cli:1": {},
 
     "ghcr.io/devcontainers-extra/features/quarkus-sdkman:2": {
