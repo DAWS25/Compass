@@ -29,10 +29,12 @@ if ! command -v flutter &> /dev/null; then
     echo "Flutter not found, installing..."
     sudo apt-get update
     sudo apt-get install -y curl git unzip xz-utils zip
-    curl -O https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_latest.tar.xz
-    tar xf flutter_linux_latest.tar.xz
+    # download flutter latest
+    curl ???
+
+    tar xf /tmp/flutter_linux_latest.tar.xz -C $HOME
     export PATH="$PATH:$HOME/flutter/bin"
-    rm flutter_linux_latest.tar.xz
+    rm /tmp/flutter_linux_latest.tar.xz
 fi
 
 # Check dependencies versions
