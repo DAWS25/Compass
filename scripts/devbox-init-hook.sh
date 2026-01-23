@@ -31,7 +31,8 @@ if ! command -v flutter &> /dev/null; then
     sudo apt-get install -y curl git unzip xz-utils zip
     curl -o /tmp/flutter_linux_latest.tar.xz https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_latest.tar.xz
     tar xf /tmp/flutter_linux_latest.tar.xz -C $HOME
-    export PATH="$PATH:$HOME/flutter/bin"
+    mkdir -p $HOME/.local/bin
+    ln -s $HOME/flutter/bin/flutter $HOME/.local/bin/flutter
     rm /tmp/flutter_linux_latest.tar.xz
 fi
 
