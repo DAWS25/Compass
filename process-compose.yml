@@ -1,0 +1,5 @@
+version: "0.5"
+
+processes:
+  0-compass_app:
+    command: echo hello

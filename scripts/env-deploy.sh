@@ -4,9 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 pushd "$DIR/.."
 #!
 
-pushd compass_app
-flutter build web --release
-popd
+source "$DIR/env-build.sh"
 
 aws sts get-caller-identity
 
