@@ -1,1 +1,11 @@
-flutter_linux_latest.tar.xz
+# Environment config
+env
+.envrc
+
+# Devbox 
+.devbox/
+
+#
+
+# Binaries
+*.tar.*
