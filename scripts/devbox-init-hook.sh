@@ -34,13 +34,23 @@ if ! command -v flutter &> /dev/null; then
     tar xf /tmp/flutter_linux_latest.tar.xz -C "$HOME"
     mkdir -p "$HOME/.local/bin"
     ln -s "$HOME/flutter/bin/flutter" "$HOME/.local/bin/flutter"
+    ln -s "$HOME/flutter/bin/dart" "$HOME/.local/bin/dart"
     rm /tmp/flutter_linux_latest.tar.xz
   fi
+
+  # Terraform setup
+if ! command -v terraform &> /dev/null; then
+    echo "Terraform not found, installing..."
+    wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+    sudo apt update && sudo apt install terraform -y
+fi
                                 
 # Check dependencies versions
 aws --version
-cdk --version
 flutter --version
+dart --version
+terraform version
 
 #!
 popd
