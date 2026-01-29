@@ -1,4 +1,4 @@
-# PRESENÇA — Next.js Web App
+# Compass — Next.js Web App
 **Goal:** Build a browser-first local discovery app centered around maps, camera functionality, and real-time presence.
 
 ---
