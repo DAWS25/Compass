@@ -1,9 +1,3 @@
-variable "aws_region" {
-  description = "The AWS region to deploy resources"
-  type        = string
-  default     = "us-east-1"
-}
-
 variable "environment" {
   description = "Environment name"
   type        = string
@@ -29,13 +23,22 @@ variable "certificate_arn" {
   type        = string
 }
 
-variable "lambda_zip_path" {
-  description = "Path to Lambda function zip file"
+variable "api_gateway_endpoint" {
+  description = "API Gateway endpoint"
   type        = string
-  default     = ".open-next/server-function.zip"
 }
 
-variable "aws_account_id" {
-  description = "AWS Account ID"
+variable "s3_bucket_name" {
+  description = "S3 bucket name for static assets"
+  type        = string
+}
+
+variable "s3_oai_iam_arn" {
+  description = "CloudFront OAI IAM ARN"
+  type        = string
+}
+
+variable "image_optimization_function_arn" {
+  description = "Image optimization Lambda function ARN"
   type        = string
 }
